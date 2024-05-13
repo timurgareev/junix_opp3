@@ -1,0 +1,89 @@
+2024-05-13T00:08:33.697+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m36s470ms).
+2024-05-13T00:30:38.783+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m34s947ms).
+2024-05-13T00:46:46.923+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m38s133ms).
+2024-05-13T01:05:53.232+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m6s259ms).
+2024-05-13T01:24:21.783+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m28s512ms).
+2024-05-13T01:40:23.786+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s991ms).
+2024-05-13T01:58:15.906+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m22s109ms).
+2024-05-13T02:18:02.611+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m46s675ms).
+2024-05-13T02:34:39.723+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m7s100ms).
+2024-05-13T02:54:20.840+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m41s82ms).
+2024-05-13T03:11:07.482+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m16s631ms).
+2024-05-13T03:30:14.452+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m36s940ms).
+2024-05-13T03:51:51.863+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m7s340ms).
+2024-05-13T04:12:12.696+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m50s793ms).
+2024-05-13T04:31:02.124+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m49s382ms).
+2024-05-13T04:51:16.249+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m44s95ms).
+2024-05-13T05:10:32.924+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m46s649ms).
+2024-05-13T05:28:30.878+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m57s926ms).
+2024-05-13T05:45:41.721+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m10s823ms).
+2024-05-13T06:04:53.655+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m11s900ms).
+2024-05-13T06:23:14.767+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m21s80ms).
+2024-05-13T06:46:08.825+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m23s950ms).
+2024-05-13T07:03:45.931+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m7s90ms).
+2024-05-13T07:28:25.127+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m39s110ms).
+2024-05-13T07:45:39.829+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m44s686ms).
+2024-05-13T07:58:06.496+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m56s657ms).
+2024-05-13T08:04:28.062+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m21s543ms).
+2024-05-13T08:21:32.016+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m33s932ms).
+2024-05-13T09:27:10.528+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h5m8s499ms).
+2024-05-13T09:59:20.373+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m9s842ms).
+2024-05-13T09:59:45.540+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Retrograde clock change detected (housekeeper delta=25s169ms), soft-evicting connections from pool.
+2024-05-13T10:03:37.259+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m51s666ms).
+2024-05-13T10:29:40.083+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m2s824ms).
+2024-05-13T11:50:18.747+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h20m38s664ms).
+2024-05-13T12:33:30.183+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m11s436ms).
+2024-05-13T13:27:10.394+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m40s211ms).
+2024-05-13T13:49:22.219+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m41s660ms).
+2024-05-13T14:06:13.457+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m21s146ms).
+2024-05-13T14:07:20.715+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s258ms).
+2024-05-13T14:24:48.704+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m27s866ms).
+2024-05-13T14:39:27.128+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m38s375ms).
+2024-05-13T15:07:53.913+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m26s784ms).
+2024-05-13T15:12:48.120+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m24s186ms).
+2024-05-13T16:14:48.571+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m30s133ms).
+2024-05-13T16:15:18.299+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s757ms), soft-evicting connections from pool.
+2024-05-13T16:22:35.184+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m46s838ms).
+2024-05-13T16:40:41.343+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m36s101ms).
+2024-05-13T16:46:59.961+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m18s618ms).
+2024-05-13T16:54:50.326+03:00  WARN 24229 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m50s365ms).
+2024-05-13T17:20:35.692+03:00  INFO 35889 --- [main] c.g.s.s.junix_opp.JunixOpp2Application   : Starting JunixOpp2Application using Java 21.0.2 with PID 35889 (/Users/timurgareev/IdeaProjects/junix_opp2/build/classes/java/main started by timurgareev in /Users/timurgareev/IdeaProjects/junix_opp2)
+2024-05-13T17:20:35.692+03:00  INFO 35889 --- [main] c.g.s.s.junix_opp.JunixOpp2Application   : The following 1 profile is active: "qa"
+2024-05-13T17:20:35.991+03:00  INFO 35889 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-13T17:20:36.017+03:00  INFO 35889 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2024-05-13T17:20:36.262+03:00  INFO 35889 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-13T17:20:36.269+03:00  INFO 35889 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-13T17:20:36.269+03:00  INFO 35889 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-13T17:20:36.292+03:00  INFO 35889 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-13T17:20:36.292+03:00  INFO 35889 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 583 ms
+2024-05-13T17:20:36.382+03:00  INFO 35889 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-13T17:20:36.412+03:00  INFO 35889 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-13T17:20:36.426+03:00  INFO 35889 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-13T17:20:36.570+03:00  INFO 35889 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-13T17:20:36.584+03:00  INFO 35889 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-13T17:20:36.726+03:00  INFO 35889 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@334540a0
+2024-05-13T17:20:36.727+03:00  INFO 35889 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-13T17:20:37.274+03:00  INFO 35889 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-13T17:20:37.355+03:00  INFO 35889 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-13T17:20:37.492+03:00  WARN 35889 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-13T17:20:37.651+03:00  WARN 35889 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-05-13T17:20:37.652+03:00  INFO 35889 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-13T17:20:37.653+03:00  INFO 35889 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-13T17:20:37.655+03:00  INFO 35889 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-13T17:20:37.664+03:00  INFO 35889 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-13T17:20:37.672+03:00 ERROR 35889 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
