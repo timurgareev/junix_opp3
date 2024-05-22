@@ -4,6 +4,7 @@ import com.gta.spring.springboot.junix_opp.servise.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -28,6 +29,7 @@ public class SecurityConfig {
     @Autowired
     private JWTAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
+    @Lazy
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 
@@ -66,8 +68,8 @@ public class SecurityConfig {
         return new JWTAuthenticationFilter();
     }
 
-    @Autowired
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder());
-    }
+//    @Autowired
+//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder());
+//    }
 }
