@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,9 +37,15 @@ public class Scope {
     @JoinColumn(name = "unit_id")
     private Unit unit;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+
     private double quantity;
 
     private String comment;
+
+    @Column(updatable = false)
+    private LocalDateTime createdDate;
 
 
 
