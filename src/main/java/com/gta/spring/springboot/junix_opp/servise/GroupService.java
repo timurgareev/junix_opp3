@@ -1,7 +1,7 @@
 package com.gta.spring.springboot.junix_opp.servise;
 
-import com.gta.spring.springboot.junix_opp.dto.dto.GroupOfObjectReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.mapping.GroupOfObjectReadMapper;
+import com.gta.spring.springboot.junix_opp.dto.groupOfObject.GroupOfObjectReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.groupOfObject.GroupOfObjectReadMapper;
 import com.gta.spring.springboot.junix_opp.repository.GroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

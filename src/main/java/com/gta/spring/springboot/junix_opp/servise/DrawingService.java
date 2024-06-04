@@ -1,21 +1,16 @@
 package com.gta.spring.springboot.junix_opp.servise;
 
-import com.gta.spring.springboot.junix_opp.dto.dto.DrawingReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.dto.DrawingWithRevisionsReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.dto.GroupOfObjectReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.mapping.DrawingReadMapper;
-import com.gta.spring.springboot.junix_opp.dto.mapping.DrawingWithRevisionReadMapper;
-import com.gta.spring.springboot.junix_opp.dto.mapping.GroupOfObjectReadMapper;
-import com.gta.spring.springboot.junix_opp.entity.Drawing;
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionsReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingReadMapper;
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionReadMapper;
 import com.gta.spring.springboot.junix_opp.repository.DrawingRepository;
-import com.gta.spring.springboot.junix_opp.repository.GroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

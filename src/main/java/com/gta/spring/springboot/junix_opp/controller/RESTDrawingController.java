@@ -1,24 +1,16 @@
 package com.gta.spring.springboot.junix_opp.controller;
 
-import com.gta.spring.springboot.junix_opp.dto.dto.DrawingReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.dto.DrawingWithRevisionsReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.dto.GroupOfObjectReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.mapping.DrawingWithRevisionReadMapper;
-import com.gta.spring.springboot.junix_opp.entity.Drawing;
-import com.gta.spring.springboot.junix_opp.repository.DrawingRepository;
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionsReadDTO;
 import com.gta.spring.springboot.junix_opp.servise.DrawingService;
-import com.gta.spring.springboot.junix_opp.servise.GroupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/drawings")

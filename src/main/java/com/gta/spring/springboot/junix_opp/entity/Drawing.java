@@ -52,5 +52,14 @@ public class Drawing {
     @OneToMany(mappedBy = "drawing")
     private List<Scope> scopes = new ArrayList<>();
 
+//    event
+
+//    task
+
+//    supply request
+
+//    questions
+
+//    ксг, сметы
 
 }

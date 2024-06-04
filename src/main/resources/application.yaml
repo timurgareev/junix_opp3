@@ -38,6 +38,9 @@ spring:
     properties.hibernate:
       show_sql: true
       format_sql: true
-      hbm2ddl.auto: validate
+#      hbm2ddl.auto: validate
+      hbm2ddl.auto: update
       dialect:
-        Dialect: PostgreSQLDialect
+        Dialect: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      ddl-auto: update
