@@ -4,6 +4,7 @@ import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionsReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingReadMapper;
 import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionReadMapper;
+import com.gta.spring.springboot.junix_opp.entity.Drawing;
 import com.gta.spring.springboot.junix_opp.repository.DrawingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,20 @@ public class DrawingService {
                 .toList();
     }
 
+
+
     public Optional<DrawingWithRevisionsReadDTO> findById(Long id) {
         return drawingRepository.findById(id)
                 .map(drawingWithRevisionReadMapper::map);
+    }
+
+//    public Optional<Drawing> findById0(Long id) {
+//        return drawingRepository.findById(id);
+//    }
+    public Drawing findDrawingById(Long drawingId){
+        return Optional.ofNullable(drawingId)
+                .flatMap(drawingRepository::findById)
+                .orElse(null);
     }
 
     public List<DrawingReadDTO> findAllSimple() {

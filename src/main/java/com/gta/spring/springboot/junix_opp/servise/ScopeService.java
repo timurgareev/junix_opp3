@@ -6,7 +6,6 @@ import com.gta.spring.springboot.junix_opp.entity.Scope;
 import com.gta.spring.springboot.junix_opp.entity.User;
 import com.gta.spring.springboot.junix_opp.repository.ScopeRepository;
 import com.gta.spring.springboot.junix_opp.repository.UserRepository;
-import com.gta.spring.springboot.junix_opp.servise.helper.UserProvider;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,11 +21,11 @@ public class ScopeService {
     private final ScopeRepository scopeRepository;
     private final UserRepository userRepository;
     private final ScopeEditCreateMapper scopeEditCreateMapper;
-    private final UserProvider userProvider;
+    private final UserService userService;
 
     @Transactional
     public Scope createScope(ScopeEditCreateDTO scopeEditCreateDTO, Principal principal) {
-        User user = userProvider.getUserByPrincipal(principal);
+        User user = userService.getUserByPrincipal(principal);
         Scope scope = scopeEditCreateMapper.map(scopeEditCreateDTO);
         scope.setUser(user);
 //        scope.setCreatedDate(LocalDateTime.now());
@@ -50,10 +49,5 @@ public class ScopeService {
 //    }
 
 
-//    private User getUserByPrincipal(Principal principal) {
-//        String username = principal.getName();
-//        return userRepository.findUserByUsername(username)
-//                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
-//
-//    }
+
 }

@@ -1,6 +1,7 @@
 package com.gta.spring.springboot.junix_opp.servise;
 
 
+import com.gta.spring.springboot.junix_opp.entity.TaskType;
 import com.gta.spring.springboot.junix_opp.entity.User;
 import com.gta.spring.springboot.junix_opp.entity.enums.ERole;
 import com.gta.spring.springboot.junix_opp.exceptions.UserExistException;
@@ -14,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -60,14 +62,18 @@ public class UserService {
 //        return getUserByPrincipal(principal);
 //    }
 //
-//    private User getUserByPrincipal(Principal principal) {
-//        String username = principal.getName();
-//        return userRepository.findUserByUsername(username)
-//                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
-//
-//    }
-//
-//    public User getUserById(Long id) {
-//        return userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found"));
-//    }
+    public User getUserByPrincipal(Principal principal) {
+        String username = principal.getName();
+        return userRepository.findUserByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
+
+    }
+
+
+    public User findUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
+
 }

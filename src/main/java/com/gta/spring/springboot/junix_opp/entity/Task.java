@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -50,10 +51,10 @@ public class Task {
     private User createdUser;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User responcibleUser;
+    private User responsibleUser;
 
 
-    private LocalDateTime deadlineDate;
+    private LocalDate deadlineDate;
 
     private Boolean isComplete;
 

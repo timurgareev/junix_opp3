@@ -1,5 +1,6 @@
 package com.gta.spring.springboot.junix_opp.dto.event;
 
+import lombok.Data;
 import lombok.Value;
 
 import java.time.LocalDate;
