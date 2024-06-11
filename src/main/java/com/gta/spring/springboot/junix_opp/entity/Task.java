@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -70,6 +72,9 @@ public class Task {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "task_status_public_id")
     public TaskStatusPublic taskStatusPublic;
+
+    @ManyToMany(mappedBy = "tasks")
+    private Set<Event> events = new HashSet<>();
 
     @PrePersist
     protected void onCreate() {

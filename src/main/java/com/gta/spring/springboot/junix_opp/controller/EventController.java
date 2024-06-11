@@ -2,6 +2,7 @@ package com.gta.spring.springboot.junix_opp.controller;
 
 import com.gta.spring.springboot.junix_opp.dto.event.EventEditCreateDTO;
 import com.gta.spring.springboot.junix_opp.dto.event.EventReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.event.EventWithNewTaskCreateDTO;
 import com.gta.spring.springboot.junix_opp.servise.EventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -61,6 +62,12 @@ public class EventController {
     public ResponseEntity<String> createEvent(@RequestBody EventEditCreateDTO eventEditCreateDTO, Principal principal) {
         eventService.createEvent(eventEditCreateDTO, principal);
         return new ResponseEntity<>("Events successfully created", HttpStatus.CREATED);
+    }
+
+    @PostMapping("/eventwithtasks")
+    public ResponseEntity<String> createEventWithTasks(@RequestBody EventWithNewTaskCreateDTO eventWithNewTaskCreateDTO , Principal principal) {
+        eventService.createEventWithNewTasks(eventWithNewTaskCreateDTO, principal);
+        return new ResponseEntity<>("Events with tasks successfully created", HttpStatus.CREATED);
     }
 
     @GetMapping("/drawing/{id}")
