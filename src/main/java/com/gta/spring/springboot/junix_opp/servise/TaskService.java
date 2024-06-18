@@ -42,6 +42,9 @@ public class TaskService {
         return taskRepository.findById(id)
                 .map(taskReadMapper::map);
     }
+    public Optional<Task> findTaskById(Long id) {
+        return taskRepository.findById(id);
+    }
 
     public List<TaskReadDTO> findByDrawingId(Long id) {
         return taskRepository.findAllByDrawingId(id).stream()
@@ -56,6 +59,23 @@ public class TaskService {
                 .toList();
 
     }
+
+
+
+//    findByIdWithSupplies
+//    findByDrawingIdWithSupplies
+
+//    createNewTaskWithNewEvents
+//    createTaskNewEvents
+
+//    createNewTaskWithNewSupplies
+//    createTaskWithNewSupplies
+//    linkTaskWithSupply
+//    removeSupplyFromTask
+
+
+//    delete
+//    update
 
 
 }

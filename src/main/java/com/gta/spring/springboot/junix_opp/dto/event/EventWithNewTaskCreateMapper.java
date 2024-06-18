@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -42,9 +43,9 @@ public class EventWithNewTaskCreateMapper implements Mapper<EventWithNewTaskCrea
 
         // Map tasks if available
         if (object.getTasks() != null && !object.getTasks().isEmpty()) {
-            Set<Task> tasks = object.getTasks().stream()
+            List<Task> tasks = object.getTasks().stream()
                     .map(taskEditCreateMapper::map) // Используйте существующий маппер для задач
-                    .collect(Collectors.toSet());
+                    .collect(Collectors.toList());
             event.setTasks(tasks);
         }
     }

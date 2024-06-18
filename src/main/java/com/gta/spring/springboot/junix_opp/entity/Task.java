@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -44,6 +46,10 @@ public class Task {
 
     private String description;
 
+    private Boolean isQuestion;
+
+    private String report;
+
     @Column(updatable = false)
     private LocalDateTime createdDate;
 
@@ -73,8 +79,24 @@ public class Task {
     @JoinColumn(name = "task_status_public_id")
     public TaskStatusPublic taskStatusPublic;
 
-    @ManyToMany(mappedBy = "tasks")
-    private Set<Event> events = new HashSet<>();
+//    @ManyToMany(mappedBy = "tasks", fetch = FetchType.LAZY)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
+            CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+//    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "event_task",
+            joinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "event_id", referencedColumnName = "id"))
+    private List<Event> events = new ArrayList<>();
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
+            CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "task_supplyrequest",
+            joinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "supplyrequest_id", referencedColumnName = "id"))
+    private List<SupplyRequest> supplies = new ArrayList<>();
+
 
     @PrePersist
     protected void onCreate() {

@@ -9,6 +9,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +27,8 @@ public class SupplyRequest {
     @Column(nullable = false)
     private Long number;
 
-    private String group; /// потом может перевести в справочник?? эти группа мтр 1,2,3 и др. а на других объектах все равно будет что то иначе
+    @Column(name = "group_of_supply")
+    private String groupOfSupply; /// потом может перевести в справочник?? эти группа мтр 1,2,3 и др. а на других объектах все равно будет что то иначе
 
     private String description;
 
@@ -44,6 +48,14 @@ public class SupplyRequest {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
+            CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "task_supplyrequest",
+            joinColumns = @JoinColumn(name = "supplyrequest_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"))
+    private List<Task> tasks = new ArrayList<>();
 
     @PrePersist
     protected void onCreate() {

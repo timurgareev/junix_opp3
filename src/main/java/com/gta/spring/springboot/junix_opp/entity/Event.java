@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Data
 @NoArgsConstructor
@@ -25,7 +23,7 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false) //тут потом надо поменять на unique=false, но сначала надо правильно обработать ошибку - сейчас выходит ошибка авторизации при попытке создать дубль события
     private String name;
 
     private String description;
@@ -57,13 +55,14 @@ public class Event {
     private Boolean isSystemCreated;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
-            CascadeType.MERGE, CascadeType.REFRESH})
+            CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+//    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "event_task",
-            joinColumns = @JoinColumn(name = "event_id"),
-            inverseJoinColumns = @JoinColumn(name = "task_id")
+            joinColumns = @JoinColumn(name = "event_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id")
     )
-    private Set<Task> tasks = new HashSet<>();
+    private List<Task> tasks = new ArrayList<>();
 
 
     @PrePersist
