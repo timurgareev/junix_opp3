@@ -142,9 +142,9 @@ public class EventService {
             Event event = eventOpt.get();
             Task task = taskOpt.get();
             event.getTasks().remove(task);
-            task.getEvents().remove(event);
+//            task.getEvents().remove(event);
             eventRepository.save(event);
-            taskRepository.save(task);
+//            taskRepository.save(task);
         }
     } //надо переписать лист на сет, т.к. удаление идет не оптимально, уадает все а потом вставлет
 

@@ -7,7 +7,7 @@ import lombok.Value;
 public class SupplyRequestCreateDTO {
     Long number;
     String groupOfSupply;
-    String descriprion;
+    String description;
     String comment;
     Long drawingId;
     Long revisionId;

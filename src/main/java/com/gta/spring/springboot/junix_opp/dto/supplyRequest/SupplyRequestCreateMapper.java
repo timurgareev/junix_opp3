@@ -21,10 +21,16 @@ public class SupplyRequestCreateMapper implements Mapper<SupplyRequestCreateDTO,
         return supplyRequest;
     }
 
+    @Override
+    public SupplyRequest map(SupplyRequestCreateDTO fromObject, SupplyRequest toObject) {
+        copy(fromObject,toObject);
+        return toObject;
+    }
+
     private void copy(SupplyRequestCreateDTO object, SupplyRequest supplyRequest) {
         supplyRequest.setNumber(object.getNumber());
         supplyRequest.setGroupOfSupply(object.getGroupOfSupply());
-        supplyRequest.setDescription(object.getDescriprion());
+        supplyRequest.setDescription(object.getDescription());
         supplyRequest.setComment(object.getComment());
         supplyRequest.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
         supplyRequest.setRevision(revisionService.findRevisionById(object.getRevisionId()));

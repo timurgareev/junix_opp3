@@ -19,7 +19,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class EventController {
 
-    public final EventService eventService;
+    private final EventService eventService;
 
     @PostMapping
     public ResponseEntity<String> createEvent(@RequestBody EventEditCreateDTO eventEditCreateDTO, Principal principal) {
@@ -109,7 +109,7 @@ public class EventController {
         return new ResponseEntity<>("Events with tasks successfully created", HttpStatus.CREATED);
     }
     @PostMapping("/task/{taskId}")
-    public ResponseEntity<String> createNewEventWitHTaskId(@PathVariable Long taskId,
+    public ResponseEntity<String> createNewEventWithTaskId(@PathVariable Long taskId,
                                                               @RequestBody EventEditCreateDTO eventDTOs,
                                                               Principal principal) {
         eventService.createNewEventWithTaskId(taskId, eventDTOs, principal);
