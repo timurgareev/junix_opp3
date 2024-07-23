@@ -115,6 +115,23 @@ public class TaskController {
         return new ResponseEntity<>("Task with existing supply successfully created",HttpStatus.CREATED);
     }
 
+    @GetMapping("/createduser/current")
+    public List<TaskReadDTO> findAllByCurrentCreatedUser(Principal principal) {
+        return taskService.findAllByCurrentCreatedUser(principal);
+    } //тут надо добавить обработку по ненайденным айди
 
+    @GetMapping("/responsibleuser/current")
+    public List<TaskReadDTO> findAllByCurrentResponsibleUser(Principal principal) {
+        return taskService.findAllByCurrentResponsibleUser(principal);
+    } //тут надо добавить обработку по ненайденным айди
 
+    @GetMapping("/createduser/{id}")
+    public List<TaskReadDTO> findAllByCreatedUserId(@PathVariable Long id) {
+        return taskService.findAllByCreatedUserId(id);
+    } //тут надо добавить обработку по ненайденным айди
+
+    @GetMapping("/responsibleuser/{id}")
+    public List<TaskReadDTO> findAllByResponsibleUserId(@PathVariable Long id) {
+        return taskService.findAllByResponsibleUserId(id);
+    } //тут надо добавить обработку по ненайденным айди
 }

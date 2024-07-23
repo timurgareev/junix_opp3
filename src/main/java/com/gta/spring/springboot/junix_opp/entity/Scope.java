@@ -40,7 +40,7 @@ public class Scope {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    private double quantity;
+    private Double quantity;
 
     private String comment;
 

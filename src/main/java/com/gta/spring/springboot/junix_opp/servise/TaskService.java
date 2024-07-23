@@ -153,7 +153,30 @@ public class TaskService {
 
 //    createNewTaskWithNewEvents - пока не делаем, т.к. думаю мне это не понадобится
 
+    public List<TaskReadDTO> findAllByCurrentCreatedUser(Principal principal) {
+        User user = userService.getUserByPrincipal(principal);
+        return taskRepository.findAllByCreatedUserId(user.getId()).stream()
+                .map(taskReadMapper::map)
+                .toList();
+    }
 
+    public List<TaskReadDTO> findAllByCurrentResponsibleUser(Principal principal) {
+        User user = userService.getUserByPrincipal(principal);
+        return taskRepository.findAllByResponsibleUserId(user.getId()).stream()
+                .map(taskReadMapper::map)
+                .toList();
+    }
+
+    public List<TaskReadDTO> findAllByCreatedUserId(Long id) {
+        return taskRepository.findAllByCreatedUserId(id).stream()
+                .map(taskReadMapper::map)
+                .toList();
+    }
+    public List<TaskReadDTO> findAllByResponsibleUserId(Long id) {
+        return taskRepository.findAllByResponsibleUserId(id).stream()
+                .map(taskReadMapper::map)
+                .toList();
+    }
 
 
 

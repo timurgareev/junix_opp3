@@ -1,6 +1,9 @@
 package com.gta.spring.springboot.junix_opp.servise;
 
 
+import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionsReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.user.UserReadDTO;
+import com.gta.spring.springboot.junix_opp.dto.user.UserReadMapper;
 import com.gta.spring.springboot.junix_opp.entity.TaskType;
 import com.gta.spring.springboot.junix_opp.entity.User;
 import com.gta.spring.springboot.junix_opp.entity.enums.ERole;
@@ -15,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,10 +28,13 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    private final UserReadMapper userReadMapper;
+
     @Autowired
-    public UserService(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserService(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder, UserReadMapper userReadMapper) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.userReadMapper = userReadMapper;
     }
 
     public User createUser(SignupRequest userIn) {
@@ -58,9 +65,7 @@ public class UserService {
 //        return userRepository.save(user);
 //    }
 //
-//    public User getCurrentUser(Principal principal) {
-//        return getUserByPrincipal(principal);
-//    }
+
 //
     public User getUserByPrincipal(Principal principal) {
         String username = principal.getName();
@@ -69,10 +74,25 @@ public class UserService {
 
     }
 
+    public UserReadDTO getUserDTOByPrincipal(Principal principal) {
+        String username = principal.getName();
+        return userRepository.findUserByUsername(username)
+                .map(userReadMapper::map)
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
+
+    }
+
+
 
     public User findUserById(Long id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
+    public List<UserReadDTO> findAll() {
+        return userRepository.findAll().stream()
+                .map(userReadMapper::map)
+                .toList();
     }
 
 
