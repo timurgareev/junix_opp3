@@ -50,11 +50,15 @@ public class Revision {
     private Integer rateNumber;
 
     @Column(name = "is_latest")
-    private boolean isLatest;
+    private Boolean isLatest;
 
     private String comment1;
 
     private String comment2;
+
+    private Boolean isArchive;
+    private Boolean isOnDelete;
+
 
     @Column(name = "id_drawing_rev")
     private String idDrawingRev;
@@ -62,6 +66,12 @@ public class Revision {
     @Builder.Default
     @OneToMany(mappedBy = "revision")
     private List<Scope> scopes = new ArrayList<>();
+
+    @PrePersist
+    protected void onCreate() {
+        this.isArchive = false;
+        this.isOnDelete = false;
+    }
 
 
 }

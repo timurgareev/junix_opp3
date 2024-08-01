@@ -29,6 +29,7 @@ public class SupplyRequestCreateMapper implements Mapper<SupplyRequestCreateDTO,
 
     private void copy(SupplyRequestCreateDTO object, SupplyRequest supplyRequest) {
         supplyRequest.setNumber(object.getNumber());
+        supplyRequest.setSupplyRequestDate(object.getSupplyDate());
         supplyRequest.setGroupOfSupply(object.getGroupOfSupply());
         supplyRequest.setDescription(object.getDescription());
         supplyRequest.setComment(object.getComment());

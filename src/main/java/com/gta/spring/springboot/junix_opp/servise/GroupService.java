@@ -2,7 +2,10 @@ package com.gta.spring.springboot.junix_opp.servise;
 
 import com.gta.spring.springboot.junix_opp.dto.groupOfObject.GroupOfObjectReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.groupOfObject.GroupOfObjectReadMapper;
+import com.gta.spring.springboot.junix_opp.entity.GroupOfObject;
+import com.gta.spring.springboot.junix_opp.exceptions.UserExistException;
 import com.gta.spring.springboot.junix_opp.repository.GroupRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,23 +17,36 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class GroupService {
 
-    @Autowired
-    private GroupRepository groupRepository;
-
-    @Autowired
-    private GroupOfObjectReadMapper groupOfObjectReadMapper;
-
+    private final GroupRepository groupRepository;
+    private final GroupOfObjectReadMapper groupOfObjectReadMapper;
 
     public List<GroupOfObjectReadDTO> findAll() {
         return groupRepository.findAll().stream()
                 .map(groupOfObjectReadMapper::map)
                 .toList();
     }
-
-    public Optional<GroupOfObjectReadDTO> findById(Integer id) {
-        return groupRepository.findById(id)
-                .map(groupOfObjectReadMapper::map);
+//
+//    public Optional<GroupOfObjectReadDTO> findById(Integer id) {
+//        return groupRepository.findById(id)
+//                .map(groupOfObjectReadMapper::map);
+//    }
+//
+    public GroupOfObject findGroupOfObjectById(Integer id){
+        return Optional.ofNullable(id)
+                .flatMap(groupRepository::findById)
+                .orElse(null);
     }
+
+    public GroupOfObjectReadDTO findById(Integer id) {
+        if (id==null) {
+            throw new IllegalArgumentException("from service message: Id cannot be null");
+        }
+        return groupRepository.findById(id)
+                .map(groupOfObjectReadMapper::map)
+                .orElseThrow(() -> new EntityNotFoundException("from service message: Group with Id=" + id + " not found"));
+    }
+
+
 
 
 }

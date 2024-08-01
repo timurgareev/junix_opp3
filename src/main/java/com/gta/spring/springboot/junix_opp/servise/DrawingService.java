@@ -26,6 +26,8 @@ public class DrawingService {
     @Autowired
     private DrawingReadMapper drawingReadMapper;
 
+    private Boolean isArchive;
+    private Boolean isOnDelete;
 
     public List<DrawingWithRevisionsReadDTO> findAll() {
         return drawingRepository.findAll().stream()
@@ -51,6 +53,12 @@ public class DrawingService {
 
     public List<DrawingReadDTO> findAllSimple() {
         return drawingRepository.findAll().stream()
+                .map(drawingReadMapper::map)
+                .toList();
+    }
+
+    public List<DrawingReadDTO> findAllByProjectId(Integer projectId) {
+        return drawingRepository.findAllByProjectId(projectId).stream()
                 .map(drawingReadMapper::map)
                 .toList();
     }

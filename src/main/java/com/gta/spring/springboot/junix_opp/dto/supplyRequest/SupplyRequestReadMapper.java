@@ -20,10 +20,24 @@ public class SupplyRequestReadMapper implements Mapper<SupplyRequest, SupplyRequ
                 object.getGroupOfSupply(),
                 object.getDescription(),
                 object.getComment(),
-                object.getDrawing().getCode(),
-                object.getRevision().getName(),
+                object.getProject() !=null ? object.getProject().getId():null,
+                object.getProject() !=null ? object.getProject().getName():null,
+                object.getDrawing() !=null ? object.getDrawing().getId():null,
+                object.getDrawing() !=null ? object.getDrawing().getCode():null,
+                object.getRevision() !=null ? object.getRevision().getId():null,
+                object.getRevision() !=null ? object.getRevision().getName():null,
                 object.getCreatedDate(),
-                object.getUser().getUsername()
+                object.getUser() !=null ? object.getUser().getId():null,
+                object.getUser() !=null ? object.getUser().getUsername():null,
+                object.getSupplyRequestDate(),
+                object.getYear(),
+                object.getComment_1c(),
+                object.getCondition(),
+                object.getDrawing_1c(),
+                object.getRegDate(),
+                object.getReg_number(),
+                object.getStatus(),
+                object.getStatus_sign()
         );
     }
 }

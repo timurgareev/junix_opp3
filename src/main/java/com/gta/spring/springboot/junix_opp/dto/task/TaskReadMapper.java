@@ -15,18 +15,32 @@ public class TaskReadMapper implements Mapper<Task, TaskReadDTO> {
         return new TaskReadDTO(
                 object.getId(),
                 object.getName(),
+                object.getTaskType().getId(),
                 object.getTaskType().getName(),
+                object.getDrawing() !=null ? object.getDrawing().getId():null,
                 object.getDrawing() !=null ? object.getDrawing().getCode():null,
+                object.getRevision() !=null ? object.getRevision().getId():null,
                 object.getRevision() !=null ? object.getRevision().getName():null,
                 object.getProject().getId(),
+                object.getProject().getName(),
                 object.getDescription(),
+                object.getIsQuestion(),
                 object.getCreatedDate(),
+                object.getCreatedUser().getId(),
                 object.getCreatedUser().getUsername(),
+                object.getResponsibleUser().getId(),
                 object.getResponsibleUser().getUsername(),
                 object.getDeadlineDate(),
+                object.getIsComplete(),
+                object.getCompleteDate(),
                 object.getPriority().name(),
+                object.getTaskStatusPrivate() != null ? object.getTaskStatusPrivate().getId():null,
                 object.getTaskStatusPrivate() != null ? object.getTaskStatusPrivate().getName():null,
-                object.getTaskStatusPublic() != null ? object.getTaskStatusPublic().getName():null
+                object.getTaskStatusPublic() != null ? object.getTaskStatusPublic().getId():null,
+                object.getTaskStatusPublic() != null ? object.getTaskStatusPublic().getName():null,
+                object.getReport(),
+                object.getLink1(),
+                object.getLink2()
         );
     }
 }

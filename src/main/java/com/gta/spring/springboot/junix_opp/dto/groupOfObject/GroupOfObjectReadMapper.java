@@ -3,7 +3,7 @@ package com.gta.spring.springboot.junix_opp.dto.groupOfObject;
 import com.gta.spring.springboot.junix_opp.dto.Mapper;
 import com.gta.spring.springboot.junix_opp.dto.object.ObjectReadMapper;
 import com.gta.spring.springboot.junix_opp.dto.object.ObjectReadDTO;
-import com.gta.spring.springboot.junix_opp.entity.GroupOfobject;
+import com.gta.spring.springboot.junix_opp.entity.GroupOfObject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class GroupOfObjectReadMapper implements Mapper<GroupOfobject, GroupOfObjectReadDTO> {
+public class GroupOfObjectReadMapper implements Mapper<GroupOfObject, GroupOfObjectReadDTO> {
 
     @Autowired
     private ObjectReadMapper objectReadMapper;
 
     @Override
-    public GroupOfObjectReadDTO map(GroupOfobject groupOfobject) {
+    public GroupOfObjectReadDTO map(GroupOfObject groupOfobject) {
 //        ObjectReadDTO object0 = Optional.ofNullable(object.getObjects())
 //                .map(objectReadMapper::map)
 //                .orElse(null); // 'это было не для листа

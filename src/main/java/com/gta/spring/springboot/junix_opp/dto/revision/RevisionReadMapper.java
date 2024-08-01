@@ -21,9 +21,11 @@ public class RevisionReadMapper implements Mapper<Revision, RevisionReadDTO> {
                 object.getInproductionDateSystem(),
                 object.getInproductionDateManual(),
                 object.getRateNumber(),
-                object.isLatest(),
+                object.getIsLatest(),
                 object.getComment1(),
-                object.getComment2()
+                object.getComment2(),
+                object.getIsArchive(),
+                object.getIsOnDelete()
         );
     }
 

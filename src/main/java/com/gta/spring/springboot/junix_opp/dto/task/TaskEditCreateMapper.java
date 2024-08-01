@@ -40,11 +40,17 @@ public class TaskEditCreateMapper implements Mapper<TaskEditCreateDTO, Task> {
         task.setRevision(revisionService.findRevisionById(object.getRevisionId()));
         task.setProject(projectService.findProjectById(object.getProjectId()));
         task.setDescription(object.getDescription());
+        task.setIsQuestion(object.getIsQuestion());
         task.setResponsibleUser(userService.findUserById(object.getResponsibleUserId()));
         task.setDeadlineDate(object.getDeadlineDate());
+        task.setIsComplete(object.getIsComplete());
+        task.setCompleteDate(object.getCompleteDate());
         task.setPriority(EPriority.valueOf(object.getPriorityName()));
         task.setTaskStatusPrivate(taskStatusPrivateService.findTaskStatusPrivateById(object.getTaskStatusPrivate()));
         task.setTaskStatusPublic(taskStatusPublicService.findTaskStatusPublicById(object.getTaskStatusPublic()));
+        task.setReport(object.getReport());
+        task.setLink1(object.getLink1());
+        task.setLink2(object.getLink2());
     }
 }
 

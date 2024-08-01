@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/drawings")
 @RequiredArgsConstructor
-public class RESTDrawingController {
+public class DrawingController {
 
     @Autowired
     public DrawingService drawingService;
@@ -29,6 +29,12 @@ public class RESTDrawingController {
     public DrawingWithRevisionsReadDTO findById(@PathVariable("id") Long id) {
         return drawingService.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("/project/{id}")
+    public List<DrawingReadDTO> findAllByProjectId(@PathVariable("id") Integer id) {
+        return drawingService.findAllByProjectId(id);
+
     }
 
     @GetMapping("/s")

@@ -14,11 +14,18 @@ public class TaskEditCreateDTO {
     Long revisionId;
     Integer projectId;
     String description;
+    Boolean isQuestion;
 //    LocalDateTime createdDate;
 //    Long createdUserId;
     Long responsibleUserId;
     LocalDate deadlineDate;
+    Boolean isComplete;
+    LocalDateTime completeDate;
     String priorityName;
     Integer taskStatusPrivate;
     Integer taskStatusPublic;
+    String report;
+    String link1;
+    String Link2;
+
 }

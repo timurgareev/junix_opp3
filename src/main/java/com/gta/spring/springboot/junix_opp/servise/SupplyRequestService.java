@@ -75,6 +75,11 @@ public List<SupplyRequestReadDTO> findByDrawingId(Long id) {
             .map(supplyRequestReadMapper::map)
             .toList();
 }
+    public List<SupplyRequestReadDTO> findAll() {
+        return supplyRequestRepository.findAll().stream()
+                .map(supplyRequestReadMapper::map)
+                .toList();
+    }
 
     public List<SupplyRequestWithTasksReadDTO> findByDrawingIdWithTasks(Long id) {
         return supplyRequestRepository.findAllByDrawingId(id).stream()

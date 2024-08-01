@@ -1,10 +1,7 @@
 package com.gta.spring.springboot.junix_opp.servise;
 
 import com.gta.spring.springboot.junix_opp.dto.event.EventReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.scope.ScopeEditCreateDTO;
-import com.gta.spring.springboot.junix_opp.dto.scope.ScopeEditCreateMapper;
-import com.gta.spring.springboot.junix_opp.dto.scope.ScopeReadDTO;
-import com.gta.spring.springboot.junix_opp.dto.scope.ScopeReadMapper;
+import com.gta.spring.springboot.junix_opp.dto.scope.*;
 import com.gta.spring.springboot.junix_opp.dto.task.TaskReadDTO;
 import com.gta.spring.springboot.junix_opp.entity.*;
 import com.gta.spring.springboot.junix_opp.repository.ScopeRepository;
@@ -29,6 +26,7 @@ public class ScopeService {
     private final ScopeEditCreateMapper scopeEditCreateMapper;
     private final UserService userService;
     private final ScopeReadMapper scopeReadMapper;
+    private final ScopeFullReadMapper scopeFullReadMapper;
 
     @Transactional
     public Scope createScope(ScopeEditCreateDTO scopeEditCreateDTO, Principal principal) {
@@ -69,5 +67,11 @@ public class ScopeService {
     public Optional<ScopeReadDTO> findById(Long id) {
         return scopeRepository.findById(id)
                 .map(scopeReadMapper::map);
+    }
+
+    public List<ScopeFullReadDTO> findAllScopeFull() {
+        return scopeRepository.findAll().stream()
+                .map(scopeFullReadMapper::map)
+                .collect(Collectors.toList());
     }
 }

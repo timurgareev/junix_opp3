@@ -9,6 +9,7 @@ import com.gta.spring.springboot.junix_opp.entity.User;
 import com.gta.spring.springboot.junix_opp.entity.enums.ERole;
 import com.gta.spring.springboot.junix_opp.exceptions.UserExistException;
 import com.gta.spring.springboot.junix_opp.payload.request.SignupRequest;
+import com.gta.spring.springboot.junix_opp.payload.request.UpdatePasswordRequest;
 import com.gta.spring.springboot.junix_opp.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,6 +68,20 @@ public class UserService {
 //
 
 //
+
+    public void updatePassword(UpdatePasswordRequest updatePasswordRequest, Principal principal) {
+        String username = principal.getName();
+        User user = userRepository.findUserByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
+
+        if (!passwordEncoder.matches(updatePasswordRequest.getOldPassword(), user.getPassword())) {
+            throw new IllegalArgumentException("Old password is incorrect");
+        }
+
+        user.setPassword(passwordEncoder.encode(updatePasswordRequest.getNewPassword()));
+        userRepository.save(user);
+        LOG.info("Password updated successfully for user {}", username);
+    }
     public User getUserByPrincipal(Principal principal) {
         String username = principal.getName();
         return userRepository.findUserByUsername(username)

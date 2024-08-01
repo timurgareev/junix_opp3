@@ -18,5 +18,7 @@ public class RevisionReadDTO {
     String comment1;
     String comment2;
 //    String idDrawingRev;
+    Boolean isArchive;
+    Boolean isOnDelete;
 
 }

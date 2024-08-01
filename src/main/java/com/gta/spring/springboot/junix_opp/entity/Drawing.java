@@ -40,6 +40,9 @@ public class Drawing {
     @Column(name = "mark_drawing_key")
     private String markDrawingKey;
 
+    private Boolean isArchive;
+    private Boolean isOnDelete;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "drawings_marks_id")
     private DrawingsMark drawingsMark;
@@ -52,14 +55,11 @@ public class Drawing {
     @OneToMany(mappedBy = "drawing")
     private List<Scope> scopes = new ArrayList<>();
 
-//    event
+    @PrePersist
+    protected void onCreate() {
+        this.isArchive = false;
+        this.isOnDelete = false;
+    }
 
-//    task
-
-//    supply request
-
-//    questions
-
-//    ксг, сметы
 
 }

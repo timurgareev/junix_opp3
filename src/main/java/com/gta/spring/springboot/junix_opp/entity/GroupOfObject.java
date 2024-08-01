@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "groups_of_objects")
-public class GroupOfobject {
+public class GroupOfObject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +24,20 @@ public class GroupOfobject {
 
     @Column(unique = true, nullable = false)
     private String name;
-
     private String fullname;
-
     private String comment;
-
     private int ordernumber;
+    private Boolean isArchive;
+    private Boolean isOnDelete;
 
     @Builder.Default
     @OneToMany(mappedBy = "group_of_objects")
     private List<Object> objects = new ArrayList<>();
+
+    @PrePersist
+    protected void onCreate() {
+        this.isArchive = false;
+        this.isOnDelete = false;
+    }
 
 }

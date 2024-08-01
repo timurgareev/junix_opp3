@@ -8,6 +8,7 @@ import com.gta.spring.springboot.junix_opp.dto.supplyRequest.SupplyRequestWithTa
 import com.gta.spring.springboot.junix_opp.servise.SupplyRequestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +43,11 @@ public class SupplyRequestController {
         supplyService.deleteSupplyRequest(supplyId);
     }//добавить обработку ошибок на ненайденное айди
 
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<SupplyRequestReadDTO> findAll() {
+        return supplyService.findAll();
+    }
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable("id") Long id) {
         Optional<SupplyRequestReadDTO> supplyOptional = supplyService.findById(id);

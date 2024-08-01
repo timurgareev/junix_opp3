@@ -33,6 +33,9 @@ public class Zone {
 
     private String comment;
 
+    private Boolean isArchive;
+    private Boolean isOnDelete;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "projects_id")
     private Project project;
@@ -40,6 +43,12 @@ public class Zone {
     @Builder.Default
     @OneToMany(mappedBy = "zone")
     private List<Drawing> drawings = new ArrayList<>();
+
+    @PrePersist
+    protected void onCreate() {
+        this.isArchive = false;
+        this.isOnDelete = false;
+    }
 
 
 }

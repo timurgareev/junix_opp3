@@ -97,6 +97,10 @@ public class Task {
             inverseJoinColumns = @JoinColumn(name = "supplyrequest_id", referencedColumnName = "id"))
     private List<SupplyRequest> supplies = new ArrayList<>();
 
+    private String link1;
+    private String link2;
+
+
 
     @PrePersist
     protected void onCreate() {

@@ -2,6 +2,7 @@ package com.gta.spring.springboot.junix_opp.controller;
 
 import com.gta.spring.springboot.junix_opp.dto.event.EventReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.scope.ScopeEditCreateDTO;
+import com.gta.spring.springboot.junix_opp.dto.scope.ScopeFullReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.scope.ScopeReadDTO;
 import com.gta.spring.springboot.junix_opp.servise.ScopeService;
 import lombok.RequiredArgsConstructor;
@@ -61,6 +62,12 @@ public class ScopeController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("Объемов с id=" + id + " не найдено");
         }
+    }
+
+
+    @GetMapping("/full")
+    public List<ScopeFullReadDTO> findAllScopeFull() {
+        return scopeService.findAllScopeFull();
     }
 
 }

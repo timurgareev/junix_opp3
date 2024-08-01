@@ -10,5 +10,6 @@ public class ObjectReadDTO{
     Integer id;
     String name;
     List<ProjectReadDTO> projects;
+
     }
 

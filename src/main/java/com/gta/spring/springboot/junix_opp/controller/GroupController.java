@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/groups")
 @RequiredArgsConstructor
-public class RESTGroupController {
+public class GroupController {
 
     @Autowired
     public GroupService groupService;
@@ -27,10 +28,17 @@ public class RESTGroupController {
         return  groupService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public GroupOfObjectReadDTO findById(@PathVariable("id") Integer id) {
-        return groupService.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+//    @GetMapping("/{id}")
+//    public ResponseEntity<GroupOfObjectReadDTO> findById(@PathVariable("id") Integer id) {
+//        return groupService.findById(id)
+//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+//    }
+
+        @GetMapping("/{id}")
+    public ResponseEntity<GroupOfObjectReadDTO> findById(@PathVariable("id") Integer id) {
+            GroupOfObjectReadDTO group = groupService.findById(id);
+        return ResponseEntity.ok(group);
     }
+
 
 }

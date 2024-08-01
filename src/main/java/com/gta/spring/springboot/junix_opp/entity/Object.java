@@ -32,12 +32,21 @@ public class Object {
 
         private int ordernumber;
 
+        private Boolean isArchive;
+        private Boolean isOnDelete;
+
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "group_of_objects_id")
-        private GroupOfobject group_of_objects;
+        private GroupOfObject group_of_objects;
 
         @Builder.Default
         @OneToMany(mappedBy = "object")
         private List<Project> projects = new ArrayList<>();
+
+        @PrePersist
+        protected void onCreate() {
+                this.isArchive = false;
+                this.isOnDelete = false;
+        }
 
 }
