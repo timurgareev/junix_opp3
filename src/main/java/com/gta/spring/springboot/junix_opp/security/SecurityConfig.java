@@ -17,6 +17,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -30,18 +33,26 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(csrf -> csrf.disable())
+        http.csrf(AbstractHttpConfigurer::disable)
 //                .csrf(AbstractHttpConfigurer::disable)
                 .exceptionHandling(exceptionHandling ->
-                        exceptionHandling.authenticationEntryPoint(jwtAuthenticationEntryPoint)
-                )
+                        exceptionHandling.authenticationEntryPoint(jwtAuthenticationEntryPoint))
+//                .cors(cors -> cors.configurationSource(request -> {
+//                    var corsConfiguration = new CorsConfiguration();
+//                    corsConfiguration.setAllowedOriginPatterns(List.of("*"));
+//                    corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+//                    corsConfiguration.setAllowedHeaders(List.of("*"));
+//                    corsConfiguration.setAllowCredentials(true);
+//                    return corsConfiguration;
+//                }))
+
                 .sessionManagement(sessionManagement ->
-                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
+                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
                                 .requestMatchers(SecurityConstants.SIGN_UP_URLS).permitAll()
+                                .requestMatchers(SecurityConstants.SIGN_UP_URLS2).permitAll()
                                 .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

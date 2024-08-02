@@ -25,28 +25,15 @@ public class GroupService {
                 .map(groupOfObjectReadMapper::map)
                 .toList();
     }
-//
-//    public Optional<GroupOfObjectReadDTO> findById(Integer id) {
-//        return groupRepository.findById(id)
-//                .map(groupOfObjectReadMapper::map);
-//    }
-//
+
+    public Optional<GroupOfObjectReadDTO> findById(Integer id) {
+        return groupRepository.findById(id)
+                .map(groupOfObjectReadMapper::map);
+    }
+
     public GroupOfObject findGroupOfObjectById(Integer id){
         return Optional.ofNullable(id)
                 .flatMap(groupRepository::findById)
                 .orElse(null);
     }
-
-    public GroupOfObjectReadDTO findById(Integer id) {
-        if (id==null) {
-            throw new IllegalArgumentException("from service message: Id cannot be null");
-        }
-        return groupRepository.findById(id)
-                .map(groupOfObjectReadMapper::map)
-                .orElseThrow(() -> new EntityNotFoundException("from service message: Group with Id=" + id + " not found"));
-    }
-
-
-
-
 }
