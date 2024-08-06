@@ -15,7 +15,22 @@ public class DrawingReadMapper implements Mapper<Drawing, DrawingReadDTO> {
 
         return new DrawingReadDTO(
                 object.getId(),
-                object.getCode()
+                object.getCode(),
+                object.getName(),
+                object.getZone().getProject().getId(),
+                object.getZone().getProject().getName(),
+                object.getZone().getId(),
+                object.getZone().getName(),
+                object.getState(),
+                object.getDescription(),
+                object.getCodestring(),
+                object.getMarkDrawingKey(),
+                object.getDrawingsMark() !=null ? object.getDrawingsMark().getId():null,
+                object.getDrawingsMark() !=null ? object.getDrawingsMark().getMarkkey():null,
+                object.getIsArchive(),
+                object.getIsOnDelete()
+
+
         );
     }
 

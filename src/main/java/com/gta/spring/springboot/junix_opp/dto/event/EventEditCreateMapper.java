@@ -39,8 +39,8 @@ public class EventEditCreateMapper implements Mapper<EventEditCreateDTO, Event> 
         event.setName(object.getName());
         event.setDescription(object.getDescription());
         event.setEventType(eventTypeService.findById(object.getEventTypeID()));
-        event.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
-        event.setRevision(revisionService.findRevisionById(object.getRevisionId()));
+        event.setDrawing(drawingService.findEntityById(object.getDrawingId()));
+        event.setRevision(revisionService.findEntityById(object.getRevisionId()));
         event.setEventDate(object.getEventDate());
         event.setIsSystemCreated(object.getIsSystemCreated());
     }

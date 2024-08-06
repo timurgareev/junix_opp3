@@ -45,22 +45,26 @@ public class TaskService {
         taskRepository.save(task);
     }
 
-    @Transactional //3
-    public void deleteTask(Long taskId) {
-        Optional<Task> taskOpt = taskRepository.findById(taskId);
-        if (taskOpt.isPresent()) {
-            Task task = taskOpt.get();
-            for (SupplyRequest supply : task.getSupplies()) { //удалим связи с заявками
-                supply.getTasks().remove(task);
-                supplyRepository.save(supply);
-            }
-            for (Event event : task.getEvents()) { //удалим связи с событиями
-                event.getTasks().remove(task);
-                eventRepository.save(event);
-            }
-            taskRepository.deleteById(taskId);
-        }
-    }
+//    @Transactional //3
+//    public void deleteTask(Long taskId) {
+//        Optional<Task> taskOpt = taskRepository.findById(taskId);
+//        if (taskOpt.isPresent()) {
+//            Task task = taskOpt.get();
+//            for (SupplyRequest supply : task.getSupplies()) { //удалим связи с заявками
+//                supply.getTasks().remove(task);
+//                supplyRepository.save(supply);
+//            }
+//            for (Event event : task.getEvents()) { //удалим связи с событиями
+//                event.getTasks().remove(task);
+//                eventRepository.save(event);
+//            }
+//            taskRepository.deleteById(taskId);
+//        }
+//    }
+@Transactional
+public void deleteTask(Long taskId) {
+    taskRepository.deleteById(taskId);
+}
 
     public Optional<TaskReadDTO> findById(Long id) {
         return taskRepository.findById(id)

@@ -1,6 +1,7 @@
 package com.gta.spring.springboot.junix_opp.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +24,11 @@ public class Revision {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "drawings_id")
+    @NotNull
     private Drawing drawing;
 
     @Column(nullable = false)
+    @NotNull
     private String name;
 
     private String status;
@@ -58,6 +61,8 @@ public class Revision {
 
     private Boolean isArchive;
     private Boolean isOnDelete;
+    private Boolean isProcced;
+
 
 
     @Column(name = "id_drawing_rev")

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,10 @@ public class Project {
 
     private String code;
 
+    private int ordernumber=0;
+
+    private String declaration;
+
     private Boolean isArchive;
     private Boolean isOnDelete;
 
@@ -37,6 +43,7 @@ public class Project {
 
     @Builder.Default
     @OneToMany(mappedBy = "project")
+    @Fetch(FetchMode.SUBSELECT)
     private List<Zone> zones = new ArrayList<>();
 
     @PrePersist

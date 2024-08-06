@@ -8,29 +8,31 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ProjectEditMapper2 implements Mapper<ProjectEditDTO2, Project> {
+public class ProjectEditMapper implements Mapper<ProjectEditDTO, Project> {
 
     private final ObjectService objectService;
 
     @Override
-    public Project map(ProjectEditDTO2 object) {
+    public Project map(ProjectEditDTO object) {
         Project project = new Project();
         copy(object, project);
         return project;
     }
 
     @Override
-    public Project map(ProjectEditDTO2 fromObject, Project toObject) {
+    public Project map(ProjectEditDTO fromObject, Project toObject) {
         copy(fromObject, toObject);
         return toObject;
     }
 
-    private void copy(ProjectEditDTO2 object, Project project) {
+    private void copy(ProjectEditDTO object, Project project) {
         project.setName(object.getName());
         project.setFullname(object.getFullname());
         project.setCode(object.getCode());
-        project.setObject(objectService.findObjectById(object.getObjectId()));
-        project.setIsArchive(object.getIsArchive());
-        project.setIsOnDelete(object.getIsOnDelete());
+        project.setOrdernumber(object.getOrdernumber());
+        project.setDeclaration(object.getDeclaration());
+        project.setObject(objectService.findEntityById(object.getObjectId()));
+//        project.setIsArchive(object.getIsArchive());
+//        project.setIsOnDelete(object.getIsOnDelete());
     }
 }

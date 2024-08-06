@@ -36,9 +36,9 @@ public class TaskWithSuppliesCreateMapper implements Mapper<TaskWithSuppliesCrea
     private void copy(TaskWithSuppliesCreateDTO object, Task task) {
         task.setName(object.getName());
         task.setTaskType(taskTypeService.findTaskTypeById(object.getTaskTypeId()));
-        task.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
-        task.setRevision(revisionService.findRevisionById(object.getRevisionId()));
-        task.setProject(projectService.findProjectById(object.getProjectId()));
+        task.setDrawing(drawingService.findEntityById(object.getDrawingId()));
+        task.setRevision(revisionService.findEntityById(object.getRevisionId()));
+        task.setProject(projectService.findEntityById(object.getProjectId()));
         task.setDescription(object.getDescription());
         task.setResponsibleUser(userService.findUserById(object.getResponsibleUserId()));
         task.setDeadlineDate(object.getDeadlineDate());

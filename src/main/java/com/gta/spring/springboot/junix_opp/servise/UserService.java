@@ -1,10 +1,8 @@
 package com.gta.spring.springboot.junix_opp.servise;
 
 
-import com.gta.spring.springboot.junix_opp.dto.drawing.DrawingWithRevisionsReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.user.UserReadDTO;
 import com.gta.spring.springboot.junix_opp.dto.user.UserReadMapper;
-import com.gta.spring.springboot.junix_opp.entity.TaskType;
 import com.gta.spring.springboot.junix_opp.entity.User;
 import com.gta.spring.springboot.junix_opp.entity.enums.ERole;
 import com.gta.spring.springboot.junix_opp.exceptions.UserExistException;
@@ -20,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {

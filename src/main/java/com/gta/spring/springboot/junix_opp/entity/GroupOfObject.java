@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class GroupOfObject {
 
     @Builder.Default
     @OneToMany(mappedBy = "group_of_objects")
+//    @Fetch(value = FetchMode.SUBSELECT)
     private List<Object> objects = new ArrayList<>();
 
     @PrePersist

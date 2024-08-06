@@ -1,7 +1,6 @@
 package com.gta.spring.springboot.junix_opp.dto.task;
 
 import com.gta.spring.springboot.junix_opp.dto.Mapper;
-import com.gta.spring.springboot.junix_opp.entity.Revision;
 import com.gta.spring.springboot.junix_opp.entity.Task;
 import com.gta.spring.springboot.junix_opp.entity.enums.EPriority;
 import com.gta.spring.springboot.junix_opp.servise.*;
@@ -36,9 +35,9 @@ public class TaskEditCreateMapper implements Mapper<TaskEditCreateDTO, Task> {
     private void copy(TaskEditCreateDTO object, Task task) {
         task.setName(object.getName());
         task.setTaskType(taskTypeService.findTaskTypeById(object.getTaskTypeId()));
-        task.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
-        task.setRevision(revisionService.findRevisionById(object.getRevisionId()));
-        task.setProject(projectService.findProjectById(object.getProjectId()));
+        task.setDrawing(drawingService.findEntityById(object.getDrawingId()));
+        task.setRevision(revisionService.findEntityById(object.getRevisionId()));
+        task.setProject(projectService.findEntityById(object.getProjectId()));
         task.setDescription(object.getDescription());
         task.setIsQuestion(object.getIsQuestion());
         task.setResponsibleUser(userService.findUserById(object.getResponsibleUserId()));

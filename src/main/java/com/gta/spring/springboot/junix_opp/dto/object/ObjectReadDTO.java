@@ -1,15 +1,17 @@
 package com.gta.spring.springboot.junix_opp.dto.object;
 
-import com.gta.spring.springboot.junix_opp.dto.project.ProjectReadDTO;
 import lombok.Value;
 
-import java.util.List;
-
 @Value
-public class ObjectReadDTO{
+public class ObjectReadDTO {
     Integer id;
     String name;
-    List<ProjectReadDTO> projects;
-
+    String fullname;
+    String comment;
+    int ordernumber;
+    Integer groupOfObject_id;
+    String groupOfObject_name;
+    Boolean isArchive;
+    Boolean isOnDelete;
     }
 

@@ -33,8 +33,8 @@ public class SupplyRequestCreateMapper implements Mapper<SupplyRequestCreateDTO,
         supplyRequest.setGroupOfSupply(object.getGroupOfSupply());
         supplyRequest.setDescription(object.getDescription());
         supplyRequest.setComment(object.getComment());
-        supplyRequest.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
-        supplyRequest.setRevision(revisionService.findRevisionById(object.getRevisionId()));
+        supplyRequest.setDrawing(drawingService.findEntityById(object.getDrawingId()));
+        supplyRequest.setRevision(revisionService.findEntityById(object.getRevisionId()));
     }
 }
 

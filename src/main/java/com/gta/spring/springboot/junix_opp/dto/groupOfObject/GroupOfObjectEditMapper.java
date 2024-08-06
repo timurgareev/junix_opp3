@@ -24,12 +24,12 @@ public class GroupOfObjectEditMapper implements Mapper<GroupOfObjectEditDTO, Gro
 
     private void copy(GroupOfObjectEditDTO object, GroupOfObject groupOfobject) {
         groupOfobject.setName(object.getName());
-        groupOfobject.setName(object.getName());
+//        groupOfobject.setName(object.getName());
         groupOfobject.setFullname(object.getFullname());
         groupOfobject.setComment(object.getComment());
         groupOfobject.setOrdernumber(object.getOrdernumber());
-        groupOfobject.setIsArchive(object.getIsArchive());
-        groupOfobject.setIsOnDelete(object.getIsOnDelete());
+//        groupOfobject.setIsArchive(object.getIsArchive());
+//        groupOfobject.setIsOnDelete(object.getIsOnDelete());
 
     }
 

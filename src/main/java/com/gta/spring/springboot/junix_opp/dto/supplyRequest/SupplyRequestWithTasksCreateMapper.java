@@ -32,8 +32,8 @@ public class SupplyRequestWithTasksCreateMapper implements Mapper<SupplyRequestW
         supplyRequest.setGroupOfSupply(object.getGroupOfSupply());
         supplyRequest.setDescription(object.getDescriprion());
         supplyRequest.setComment(object.getComment());
-        supplyRequest.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
-        supplyRequest.setRevision(revisionService.findRevisionById(object.getRevisionId()));
+        supplyRequest.setDrawing(drawingService.findEntityById(object.getDrawingId()));
+        supplyRequest.setRevision(revisionService.findEntityById(object.getRevisionId()));
 
         if (object.getTaskDTOList() != null && !object.getTaskDTOList().isEmpty()) {
             List<Task> tasks = object.getTaskDTOList().stream()

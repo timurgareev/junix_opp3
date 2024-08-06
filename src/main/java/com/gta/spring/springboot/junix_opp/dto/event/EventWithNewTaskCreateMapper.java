@@ -10,9 +10,7 @@ import com.gta.spring.springboot.junix_opp.servise.RevisionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
@@ -36,8 +34,8 @@ public class EventWithNewTaskCreateMapper implements Mapper<EventWithNewTaskCrea
         event.setName(object.getName());
         event.setDescription(object.getDescription());
         event.setEventType(eventTypeService.findById(object.getEventTypeID()));
-        event.setDrawing(drawingService.findDrawingById(object.getDrawingId()));
-        event.setRevision(revisionService.findRevisionById(object.getRevisionId()));
+        event.setDrawing(drawingService.findEntityById(object.getDrawingId()));
+        event.setRevision(revisionService.findEntityById(object.getRevisionId()));
         event.setEventDate(object.getEventDate());
         event.setIsSystemCreated(object.getIsSystemCreated());
 
